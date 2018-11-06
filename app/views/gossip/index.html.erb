@@ -1,7 +1,30 @@
 <h1>Voici la liste de tous les Gossips</h1>
 <p>
-	<%= @gossips.each do |element| %>
-		<%= element.content %>
-		<br />
-	<% end %>
+
+<table class="table table-hover" style="width:98%;">
+  <thead>
+    <tr>
+      <th scope="col">#ID</th>
+      <th scope="col">Author</th>
+      <th scope="col">Content</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @gossips.each do |element| %>
+    <tr>
+			<td><%= element.id %></td>
+			<td><%= element.user.anonymous_username %></td>
+			<td><%= element.content %></td>
+			<td>
+				<% if current_user.id == element.user_id %>
+					<%= link_to "Delete", gossip_path(element.id), method: :delete, class: "btn btn-danger" %>
+				<% end %>
+			</td>
+		</tr>
+		<% end %>
+  </tbody>
+</table>
+
+
 </p>
