@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+	<h1>WELCOME <%= current_user.anonymous_username %>, MY GOOD FRIEND !!!!!</h1>
+	<p>You are in your private area. Enjoy !</p>
+<% else %>
+	<h1>WELCOME MY FRIEND!</h1>
+	<p>This is the Gossip Device Website. Please, <%= link_to "login", new_user_session_path %> or <%= link_to "subscribe", new_user_registration_path %> to the site</p>
+<% end %>

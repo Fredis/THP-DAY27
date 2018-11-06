@@ -1,0 +1,9 @@
+<h1>Create a Gossip <%= current_user.anonymous_username %></h1>
+<%= form_for :gossip_creation do |f| %>
+  <div class="form-group" style="width:30%;">
+    <label>Your Gossip content:</label>
+    <%= f.text_area :content, class: "form-control", placeholder: "Write your biggest Gossip..." %>
+
+  </div>
+  <%= f.submit "Gossip now!", class: "btn btn-primary" %>
+<% end %>
