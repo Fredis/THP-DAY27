@@ -1,3 +1,7 @@
+<% if current_user.avatar.attachment != nil %>
+	<%= image_tag current_user.avatar %>
+<% end %>
+
 <h1>Voici la liste de tous les Gossips</h1>
 <p>
 

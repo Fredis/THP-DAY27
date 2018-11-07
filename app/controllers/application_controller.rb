@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
 	def sanitize_devise_parameters
 		devise_parameter_sanitizer.permit(:sign_up, keys: [:anonymous_username])
+		devise_parameter_sanitizer.permit(:sign_up, keys: [:avatar])
 	end
 
 
